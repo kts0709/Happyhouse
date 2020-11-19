@@ -23,5 +23,5 @@ Where is my House?
 
 ## 시연 영상
 
-[![HappyHouse 시연영상](http://img.youtube.com/vi/7wGEgsYu_O8/0.jpg)](https://youtu.be/7wGEgsYu_O8)
+[![HappyHouse 시연영상](https://i9.ytimg.com/vi/A6jFJY1Ta_I/mq1.jpg?sqp=CMj_2P0F&rs=AOn4CLBwm94s_gTslLfFUsSq6yj836f_1Q&retry=4)](https://youtu.be/A6jFJY1Ta_I)
 
