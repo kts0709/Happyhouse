@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://maybtis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.happyhouse.model.dao.MemberDao">
+
+
+	<insert id="insert" parameterType="MemberDto">
+		insert into member (memberId,memberName,memberPswd,memberAge,memberPhone)
+		values
+		(#{memberId},#{memberName},#{memberPswd},#{memberAge},#{memberPhone})
+	</insert>
+
+	<select id="login" resultType="String">
+		select memberId,memberName,memberPswd,memberAge,memberPhone
+		from member
+		where memberId=#{memberId} and memberPswd=#{memberPswd}
+	</select>
+
+	<update id="update" parameterType="MemberDto">
+		update member
+		set memberPswd=#{memberPswd},
+		memberName=#{memberName},
+		memberPhone=#{memberPhone},
+		memberAge=#{memberAge}
+		where
+		memberId=#{memberId}
+	</update>
+
+	<delete id="delete" parameterType="String">
+		delete from member
+		where memberId=#{memberId}
+	</delete>
+
+
+	<select id="findpswd"
+		resultType="MemberDto">
+		select memberpswd
+		from member
+		where memberid=#{memberId} and
+		membername=#{memberName} and
+		memberphone=#{memberPhone}
+	</select>
+	
+	
+	<select id="detailMember"
+		resultType="MemberDto">
+		select memberid,membername,memberage,memberphone,memberpswd
+		from member
+		where memberid=#{memberId}
+	</select>
+	
+
+	<select id="selectAll"
+		resultType="MemberDto">
+		select memberid,membername,memberage,memberphone from
+		member
+	</select>
+
+	<insert id="insertArea" parameterType="MyInterestArea">
+		insert into interest_area
+		(memberid,dong1,dong2,dong3)
+		values
+		(#{memberid},#{dong1},#{dong2},#{dong3})
+
+	</insert>
+
+	<delete id="deleteArea" parameterType="MyInterestArea">
+		delete from interest_area
+		where memberid=#{memberid}
+	</delete>
+
+	<select id="selectArea"
+		resultType="MyInterestArea">
+
+		select * from interest_area
+		where memberid=#{memberid}
+
+	</select>
+	
+	<update id="updateArea" parameterType="MyInterestArea">
+		update intereat_area
+		set dong1=#{dong1},
+		dong2=#{dong2},
+		dong3=#{dong3}
+		where
+		memberid=#{memberid}
+	</update>
+
+	<update id="updatePassword" parameterType="PasswordDto">
+		update member
+		set memberPswd=#{password}
+		where
+		memberId=#{id}
+	</update>
+</mapper>

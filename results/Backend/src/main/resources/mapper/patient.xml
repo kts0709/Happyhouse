@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://maybtis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pt">
+
+
+    <select id="selectAll" resultType="com.ssafy.hrm.dto.Patient">
+        select pno, name, age, ccode from patient
+    </select>
+
+    <select id="select" resultType="com.ssafy.hrm.dto.Patient">
+        select pno, name, age, ccode from patient where pno =#{name}
+    </select>
+
+    <insert id="insert">
+        insert into patient (pno, name, age, ccode) values
+        (#{pno}, #{name},#{age},#{ccode})
+    </insert>
+
+    <delete id="delete">
+        delete from patient
+        where pno=#{name}
+    </delete>
+</mapper>
